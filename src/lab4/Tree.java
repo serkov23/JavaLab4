@@ -32,8 +32,8 @@ public class Tree<T extends Comparable<T>> {
                 pyr.elementAt(layer).add(filler);
         }
         pyr.elementAt(layer).setElementAt(vertex.val, index);
-        pyr = pyramid(vertex.left, layer + 1, index, pyr,filler);
-        return pyramid(vertex.right, layer + 1, index + 1, pyr,filler);
+        pyr = pyramid(vertex.left, layer + 1, index << 1, pyr, filler);
+        return pyramid(vertex.right, layer + 1, (index << 1) + 1, pyr, filler);
     }
 
     private Node add(Node vertex, T val) {
